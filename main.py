@@ -9,7 +9,10 @@ def main():
     exits = load_exits("data/data.json")
     closest = closest_exit(user_coords, exits)
 
-    print(closest)
+    print(f"\nStation: {closest['station']}")
+    print(f"Exit name: {closest['exit_name']}")
+    print(f"Distance: {closest['distance']:.1f} meters")
+    print(f"Direction: {closest['direction']}")
 
 
 
