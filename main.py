@@ -1,11 +1,15 @@
 from src.exits import load_exits
+from src.geocoding import geocode
+from src.finder import closest_exit
 
 def main():
+    address = input("Where do you want to go?: ")
+    user_coords = geocode(address)
+
     exits = load_exits("data/data.json")
-    print(f"Loaded {len(exits)} exits")
-    print("First 3 exits:")
-    for exit in exits[:3]:
-        print(exit)
+    closest = closest_exit(user_coords, exits)
+
+    print(closest)
 
 
 
